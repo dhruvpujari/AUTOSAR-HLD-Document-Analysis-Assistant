@@ -1,0 +1,40 @@
+# Run from the project root:  docker compose -f Model_Prompts_Config/docker-compose.yml up --build
+# First time only, pull the model:
+#   docker compose -f Model_Prompts_Config/docker-compose.yml exec ollama ollama pull llama3.1:8b-instruct-q4_K_M
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    # GPU (optional): add a deploy.resources.reservations.devices entry for nvidia
+
+  api:
+    build:
+      context: ..
+      dockerfile: Model_Prompts_Config/Dockerfile
+    command: uvicorn app.api:app --host 0.0.0.0 --port 8000
+    environment:
+      APP_TOKEN: change-me
+      AIML_CONFIG_DIR: /app/Model_Prompts_Config
+      OLLAMA_HOST: http://ollama:11434
+    volumes:
+      - store_data:/app/Code/store
+      - ../Input_Data:/app/Input_Data
+      - ../Evaluation_Results:/app/Evaluation_Results
+    depends_on: [ollama]
+    ports: ["8000:8000"]
+
+  ui:
+    build:
+      context: ..
+      dockerfile: Model_Prompts_Config/Dockerfile
+    command: streamlit run ui/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    environment:
+      API_URL: http://api:8000
+      APP_TOKEN: change-me
+    depends_on: [api]
+    ports: ["8501:8501"]
+
+volumes:
+  ollama_data:
+  store_data:

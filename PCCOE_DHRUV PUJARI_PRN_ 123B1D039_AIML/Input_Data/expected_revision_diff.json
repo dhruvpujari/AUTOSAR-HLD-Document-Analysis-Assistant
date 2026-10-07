@@ -1,0 +1,62 @@
+[
+  {
+    "change": "added",
+    "kind": "components",
+    "name": "Swc_DoorAjarMon",
+    "detail": ""
+  },
+  {
+    "change": "added",
+    "kind": "interfaces",
+    "name": "If_DoorAjar",
+    "detail": ""
+  },
+  {
+    "change": "added",
+    "kind": "interfaces",
+    "name": "If_DoorLockCmdV2",
+    "detail": ""
+  },
+  {
+    "change": "removed",
+    "kind": "interfaces",
+    "name": "If_DoorLockCmd",
+    "detail": ""
+  },
+  {
+    "change": "added",
+    "kind": "signals",
+    "name": "Sig_DoorAjar",
+    "detail": ""
+  },
+  {
+    "change": "removed",
+    "kind": "signals",
+    "name": "Sig_LockFaultFlag",
+    "detail": ""
+  },
+  {
+    "change": "port_changed",
+    "kind": "components",
+    "name": "Swc_DoorLockCtrl",
+    "detail": "new/changed port Pp_LockCmd -> If_DoorLockCmdV2"
+  },
+  {
+    "change": "port_changed",
+    "kind": "components",
+    "name": "Swc_DoorLockCtrl",
+    "detail": "old port Pp_LockCmd -> If_DoorLockCmd no longer present"
+  },
+  {
+    "change": "port_changed",
+    "kind": "components",
+    "name": "Swc_LockActuatorDrv",
+    "detail": "new/changed port Rp_LockCmd -> If_DoorLockCmdV2"
+  },
+  {
+    "change": "port_changed",
+    "kind": "components",
+    "name": "Swc_LockActuatorDrv",
+    "detail": "old port Rp_LockCmd -> If_DoorLockCmd no longer present"
+  }
+]

@@ -1,0 +1,552 @@
+[
+  {
+    "id": 1,
+    "type": "fact",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_KeyFobReq of Swc_DoorLockCtrl use?",
+    "keywords": [
+      "If_KeyFobRequest"
+    ]
+  },
+  {
+    "id": 2,
+    "type": "multi",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_DoorLockCtrl.",
+    "keywords": [
+      "Rp_KeyFobReq",
+      "Rp_VehSpeed",
+      "Pp_LockCmd"
+    ]
+  },
+  {
+    "id": 3,
+    "type": "fact",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_KeyFobReq of Swc_KeyFobRx use?",
+    "keywords": [
+      "If_KeyFobRequest"
+    ]
+  },
+  {
+    "id": 4,
+    "type": "multi",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_KeyFobRx.",
+    "keywords": [
+      "Pp_KeyFobReq"
+    ]
+  },
+  {
+    "id": 5,
+    "type": "fact",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_VehSpeed of Swc_VehSpeedProv use?",
+    "keywords": [
+      "If_VehSpeed"
+    ]
+  },
+  {
+    "id": 6,
+    "type": "multi",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_VehSpeedProv.",
+    "keywords": [
+      "Pp_VehSpeed"
+    ]
+  },
+  {
+    "id": 7,
+    "type": "fact",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_LockCmd of Swc_LockActuatorDrv use?",
+    "keywords": [
+      "If_DoorLockCmd"
+    ]
+  },
+  {
+    "id": 8,
+    "type": "multi",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_LockActuatorDrv.",
+    "keywords": [
+      "Rp_LockCmd",
+      "Pp_ActuatorStatus",
+      "Rp_AjarState"
+    ]
+  },
+  {
+    "id": 9,
+    "type": "table",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_DoorLockState?",
+    "keywords": [
+      "Swc_LockActuatorDrv"
+    ]
+  },
+  {
+    "id": 10,
+    "type": "table",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_KeyFobValid?",
+    "keywords": [
+      "Swc_KeyFobRx"
+    ]
+  },
+  {
+    "id": 11,
+    "type": "table",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 6,
+    "question": "What data elements does If_KeyFobRequest contain?",
+    "keywords": [
+      "LockRequest",
+      "UnlockRequest",
+      "PanicRequest"
+    ]
+  },
+  {
+    "id": 12,
+    "type": "multi",
+    "doc": "HLD_DoorLock_v1.0.pdf",
+    "page": 4,
+    "question": "Which components does Swc_DoorLockCtrl depend on?",
+    "keywords": [
+      "Swc_VehSpeedProv",
+      "Swc_KeyFobRx"
+    ]
+  },
+  {
+    "id": 13,
+    "type": "fact",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_SwitchInput of Swc_WindowLiftCtrl use?",
+    "keywords": [
+      "If_WindowSwitch"
+    ]
+  },
+  {
+    "id": 14,
+    "type": "multi",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_WindowLiftCtrl.",
+    "keywords": [
+      "Rp_SwitchInput",
+      "Rp_Position",
+      "Pp_MotorCmd"
+    ]
+  },
+  {
+    "id": 15,
+    "type": "fact",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_Switch of Swc_SwitchRx use?",
+    "keywords": [
+      "If_WindowSwitch"
+    ]
+  },
+  {
+    "id": 16,
+    "type": "multi",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_SwitchRx.",
+    "keywords": [
+      "Pp_Switch"
+    ]
+  },
+  {
+    "id": 17,
+    "type": "fact",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_Position of Swc_PositionSensor use?",
+    "keywords": [
+      "If_WindowPosition"
+    ]
+  },
+  {
+    "id": 18,
+    "type": "multi",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_PositionSensor.",
+    "keywords": [
+      "Pp_Position"
+    ]
+  },
+  {
+    "id": 19,
+    "type": "fact",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_MotorCurrent of Swc_AntiPinchMon use?",
+    "keywords": [
+      "If_MotorCurrent"
+    ]
+  },
+  {
+    "id": 20,
+    "type": "multi",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_AntiPinchMon.",
+    "keywords": [
+      "Rp_MotorCurrent",
+      "Pp_PinchEvent"
+    ]
+  },
+  {
+    "id": 21,
+    "type": "table",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_WindowPosPct?",
+    "keywords": [
+      "Swc_PositionSensor"
+    ]
+  },
+  {
+    "id": 22,
+    "type": "table",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_PinchDetected?",
+    "keywords": [
+      "Swc_AntiPinchMon"
+    ]
+  },
+  {
+    "id": 23,
+    "type": "table",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 6,
+    "question": "What data elements does If_WindowSwitch contain?",
+    "keywords": [
+      "SwitchState",
+      "PressDuration"
+    ]
+  },
+  {
+    "id": 24,
+    "type": "multi",
+    "doc": "HLD_WindowLift_v1.0.pdf",
+    "page": 4,
+    "question": "Which components does Swc_WindowLiftCtrl depend on?",
+    "keywords": [
+      "Swc_SwitchRx",
+      "Swc_PositionSensor"
+    ]
+  },
+  {
+    "id": 25,
+    "type": "fact",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_CellVolt of Swc_BatMonMgr use?",
+    "keywords": [
+      "If_CellVoltage"
+    ]
+  },
+  {
+    "id": 26,
+    "type": "multi",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_BatMonMgr.",
+    "keywords": [
+      "Rp_CellVolt",
+      "Rp_PackTemp",
+      "Pp_SocValue"
+    ]
+  },
+  {
+    "id": 27,
+    "type": "fact",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_CellVolt of Swc_CellVoltAcq use?",
+    "keywords": [
+      "If_CellVoltage"
+    ]
+  },
+  {
+    "id": 28,
+    "type": "multi",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_CellVoltAcq.",
+    "keywords": [
+      "Pp_CellVolt"
+    ]
+  },
+  {
+    "id": 29,
+    "type": "fact",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_PackTemp of Swc_TempAcq use?",
+    "keywords": [
+      "If_PackTemp"
+    ]
+  },
+  {
+    "id": 30,
+    "type": "multi",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_TempAcq.",
+    "keywords": [
+      "Pp_PackTemp"
+    ]
+  },
+  {
+    "id": 31,
+    "type": "fact",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_CellVolt of Swc_SocEstimator use?",
+    "keywords": [
+      "If_CellVoltage"
+    ]
+  },
+  {
+    "id": 32,
+    "type": "multi",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_SocEstimator.",
+    "keywords": [
+      "Rp_CellVolt",
+      "Pp_Soc"
+    ]
+  },
+  {
+    "id": 33,
+    "type": "table",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_SocPercent?",
+    "keywords": [
+      "Swc_SocEstimator"
+    ]
+  },
+  {
+    "id": 34,
+    "type": "table",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_PackTempC?",
+    "keywords": [
+      "Swc_TempAcq"
+    ]
+  },
+  {
+    "id": 35,
+    "type": "table",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 6,
+    "question": "What data elements does If_CellVoltage contain?",
+    "keywords": [
+      "CellVoltMv",
+      "CellIndex"
+    ]
+  },
+  {
+    "id": 36,
+    "type": "multi",
+    "doc": "HLD_BatteryMonitor_v1.0.pdf",
+    "page": 4,
+    "question": "Which components does Swc_BatMonMgr depend on?",
+    "keywords": [
+      "Swc_CellVoltAcq",
+      "Swc_TempAcq"
+    ]
+  },
+  {
+    "id": 37,
+    "type": "fact",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_StalkPos of Swc_WiperCtrl use?",
+    "keywords": [
+      "If_StalkPosition"
+    ]
+  },
+  {
+    "id": 38,
+    "type": "multi",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_WiperCtrl.",
+    "keywords": [
+      "Rp_StalkPos",
+      "Rp_RainLevel",
+      "Pp_WiperCmd"
+    ]
+  },
+  {
+    "id": 39,
+    "type": "fact",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_StalkPos of Swc_StalkRx use?",
+    "keywords": [
+      "If_StalkPosition"
+    ]
+  },
+  {
+    "id": 40,
+    "type": "multi",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_StalkRx.",
+    "keywords": [
+      "Pp_StalkPos"
+    ]
+  },
+  {
+    "id": 41,
+    "type": "fact",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Pp_RainLevel of Swc_RainSensorRx use?",
+    "keywords": [
+      "If_RainLevel"
+    ]
+  },
+  {
+    "id": 42,
+    "type": "multi",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_RainSensorRx.",
+    "keywords": [
+      "Pp_RainLevel"
+    ]
+  },
+  {
+    "id": 43,
+    "type": "fact",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "Which interface does port Rp_WiperCmd of Swc_WiperMotorDrv use?",
+    "keywords": [
+      "If_WiperCmd"
+    ]
+  },
+  {
+    "id": 44,
+    "type": "multi",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "List the ports of Swc_WiperMotorDrv.",
+    "keywords": [
+      "Rp_WiperCmd",
+      "Pp_ParkPos"
+    ]
+  },
+  {
+    "id": 45,
+    "type": "table",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_WiperSpeedReq?",
+    "keywords": [
+      "Swc_WiperCtrl"
+    ]
+  },
+  {
+    "id": 46,
+    "type": "table",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 7,
+    "question": "Which component produces the signal Sig_RainIntensity?",
+    "keywords": [
+      "Swc_RainSensorRx"
+    ]
+  },
+  {
+    "id": 47,
+    "type": "table",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 6,
+    "question": "What data elements does If_StalkPosition contain?",
+    "keywords": [
+      "StalkState",
+      "StalkValid"
+    ]
+  },
+  {
+    "id": 48,
+    "type": "multi",
+    "doc": "HLD_WiperControl_v1.0.pdf",
+    "page": 4,
+    "question": "Which components does Swc_WiperCtrl depend on?",
+    "keywords": [
+      "Swc_StalkRx",
+      "Swc_RainSensorRx"
+    ]
+  },
+  {
+    "id": 49,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "What is the CAN baud rate used by Swc_DoorLockCtrl?",
+    "keywords": []
+  },
+  {
+    "id": 50,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "Which ASIL level is assigned to Sig_PinchDetected?",
+    "keywords": []
+  },
+  {
+    "id": 51,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "What is the flash memory size of the ECU running Swc_BatMonMgr?",
+    "keywords": []
+  },
+  {
+    "id": 52,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "Which supplier developed Swc_WiperCtrl?",
+    "keywords": []
+  },
+  {
+    "id": 53,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "What is the worst case execution time of Swc_SocEstimator?",
+    "keywords": []
+  },
+  {
+    "id": 54,
+    "type": "not_found",
+    "doc": "",
+    "page": 0,
+    "question": "Which AUTOSAR release is used by the Window Lift ECU?",
+    "keywords": []
+  }
+]

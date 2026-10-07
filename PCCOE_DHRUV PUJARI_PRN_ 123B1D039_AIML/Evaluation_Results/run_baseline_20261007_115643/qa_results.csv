@@ -1,0 +1,55 @@
+id,type,question,expected_doc,expected_page,keywords,found,retrieval_hit,citation_ok,answer_correct,confidence,latency_s,answer
+1,fact,Which interface does port Rp_KeyFobReq of Swc_DoorLockCtrl use?,HLD_DoorLock_v1.0.pdf,4,If_KeyFobRequest,True,True,True,True,high,42.56,If_KeyFobRequest [S1]
+2,multi,List the ports of Swc_DoorLockCtrl.,HLD_DoorLock_v1.0.pdf,4,Rp_KeyFobReq;Rp_VehSpeed;Pp_LockCmd,True,True,False,True,high,30.28,"The ports of Swc_DoorLockCtrl are: Rp_KeyFobReq, Rp_VehSpeed, Pp_LockCmd [S1]"
+3,fact,Which interface does port Pp_KeyFobReq of Swc_KeyFobRx use?,HLD_DoorLock_v1.0.pdf,4,If_KeyFobRequest,True,True,True,True,high,23.29,If_KeyFobRequest [S1]
+4,multi,List the ports of Swc_KeyFobRx.,HLD_DoorLock_v1.0.pdf,4,Pp_KeyFobReq,True,True,True,True,high,17.27,The port of Swc_KeyFobRx is Pp_KeyFobReq provided If_KeyFobRequest [S1].
+5,fact,Which interface does port Pp_VehSpeed of Swc_VehSpeedProv use?,HLD_DoorLock_v1.0.pdf,4,If_VehSpeed,True,True,True,True,high,21.47,If_VehSpeed [S1]
+6,multi,List the ports of Swc_VehSpeedProv.,HLD_DoorLock_v1.0.pdf,4,Pp_VehSpeed,True,True,True,True,high,14.63,Pp_VehSpeed provided If_VehSpeed [S1]
+7,fact,Which interface does port Rp_LockCmd of Swc_LockActuatorDrv use?,HLD_DoorLock_v1.0.pdf,4,If_DoorLockCmd,True,True,True,True,high,24.98,If_DoorLockCmd [S1]
+8,multi,List the ports of Swc_LockActuatorDrv.,HLD_DoorLock_v1.0.pdf,4,Rp_LockCmd;Pp_ActuatorStatus;Rp_AjarState,True,True,True,True,high,23.0,"The ports of Swc_LockActuatorDrv are: Rp_LockCmd, Pp_ActuatorStatus, Rp_AjarState  [S1]"
+9,table,Which component produces the signal Sig_DoorLockState?,HLD_DoorLock_v1.0.pdf,7,Swc_LockActuatorDrv,True,True,True,True,high,14.21,Swc_LockActuatorDrv [S3]
+10,table,Which component produces the signal Sig_KeyFobValid?,HLD_DoorLock_v1.0.pdf,7,Swc_KeyFobRx,True,True,False,True,high,13.95,Swc_KeyFobRx [S1]
+11,table,What data elements does If_KeyFobRequest contain?,HLD_DoorLock_v1.0.pdf,6,LockRequest;UnlockRequest;PanicRequest,True,True,True,True,high,13.56,"LockRequest, UnlockRequest, PanicRequest [S4]"
+12,multi,Which components does Swc_DoorLockCtrl depend on?,HLD_DoorLock_v1.0.pdf,4,Swc_VehSpeedProv;Swc_KeyFobRx,True,True,False,True,high,19.74,Swc_DoorLockCtrl depends on Swc_VehSpeedProv and Swc_KeyFobRx. [S1]
+13,fact,Which interface does port Rp_SwitchInput of Swc_WindowLiftCtrl use?,HLD_WindowLift_v1.0.pdf,4,If_WindowSwitch,True,True,True,True,high,20.79,If_WindowSwitch [S1]
+14,multi,List the ports of Swc_WindowLiftCtrl.,HLD_WindowLift_v1.0.pdf,4,Rp_SwitchInput;Rp_Position;Pp_MotorCmd,True,True,True,True,high,20.84,"The ports of Swc_WindowLiftCtrl are: Rp_SwitchInput (required, If_WindowSwitch) Rp_Position (required, If_WindowPosition) Pp_MotorCmd (provided, If_MotorCmd)  [S1]"
+15,fact,Which interface does port Pp_Switch of Swc_SwitchRx use?,HLD_WindowLift_v1.0.pdf,4,If_WindowSwitch,True,True,True,True,high,20.86,If_WindowSwitch [S1]
+16,multi,List the ports of Swc_SwitchRx.,HLD_WindowLift_v1.0.pdf,4,Pp_Switch,True,True,True,True,high,12.12,The port of Swc_SwitchRx is: Pp_Switch provided If_WindowSwitch [S1]
+17,fact,Which interface does port Pp_Position of Swc_PositionSensor use?,HLD_WindowLift_v1.0.pdf,4,If_WindowPosition,True,True,True,True,high,20.52,Pp_Position uses interface If_WindowPosition [S1]
+18,multi,List the ports of Swc_PositionSensor.,HLD_WindowLift_v1.0.pdf,4,Pp_Position,True,True,True,True,high,19.79,The port of Swc_PositionSensor is Pp_Position provided If_WindowPosition [S1].
+19,fact,Which interface does port Rp_MotorCurrent of Swc_AntiPinchMon use?,HLD_WindowLift_v1.0.pdf,4,If_MotorCurrent,True,True,True,True,high,22.54,If_MotorCurrent [S1]
+20,multi,List the ports of Swc_AntiPinchMon.,HLD_WindowLift_v1.0.pdf,4,Rp_MotorCurrent;Pp_PinchEvent,True,True,True,True,high,22.66,Swc_AntiPinchMon has 2 port(s): Rp_MotorCurrent and Pp_PinchEvent. [S1]
+21,table,Which component produces the signal Sig_WindowPosPct?,HLD_WindowLift_v1.0.pdf,7,Swc_PositionSensor,True,True,True,True,high,19.19,Swc_PositionSensor [S1]
+22,table,Which component produces the signal Sig_PinchDetected?,HLD_WindowLift_v1.0.pdf,7,Swc_AntiPinchMon,True,True,False,True,high,16.74,Swc_AntiPinchMon [S1]
+23,table,What data elements does If_WindowSwitch contain?,HLD_WindowLift_v1.0.pdf,6,SwitchState;PressDuration,True,True,True,True,high,15.63,"SwitchState, PressDuration [S2]"
+24,multi,Which components does Swc_WindowLiftCtrl depend on?,HLD_WindowLift_v1.0.pdf,4,Swc_SwitchRx;Swc_PositionSensor,True,True,True,True,high,17.72,Swc_WindowLiftCtrl depends on Swc_SwitchRx and Swc_PositionSensor. [S1]
+25,fact,Which interface does port Rp_CellVolt of Swc_BatMonMgr use?,HLD_BatteryMonitor_v1.0.pdf,4,If_CellVoltage,True,True,True,True,high,20.7,If_CellVoltage [S1]
+26,multi,List the ports of Swc_BatMonMgr.,HLD_BatteryMonitor_v1.0.pdf,4,Rp_CellVolt;Rp_PackTemp;Pp_SocValue,True,True,True,False,high,19.02,"The ports of Swc_BatMonMgr are: Rp_CellVolt, Rp_PackTemp [S1]"
+27,fact,Which interface does port Pp_CellVolt of Swc_CellVoltAcq use?,HLD_BatteryMonitor_v1.0.pdf,4,If_CellVoltage,True,True,True,True,high,19.47,If_CellVoltage [S1]
+28,multi,List the ports of Swc_CellVoltAcq.,HLD_BatteryMonitor_v1.0.pdf,4,Pp_CellVolt,True,True,True,True,high,16.34,Pp_CellVolt [S1]
+29,fact,Which interface does port Pp_PackTemp of Swc_TempAcq use?,HLD_BatteryMonitor_v1.0.pdf,4,If_PackTemp,True,True,True,True,high,19.62,If_PackTemp [S1]
+30,multi,List the ports of Swc_TempAcq.,HLD_BatteryMonitor_v1.0.pdf,4,Pp_PackTemp,True,True,True,True,high,14.81,"Swc_TempAcq has 1 port(s), which is Pp_PackTemp [S1]."
+31,fact,Which interface does port Rp_CellVolt of Swc_SocEstimator use?,HLD_BatteryMonitor_v1.0.pdf,4,If_CellVoltage,True,True,True,True,high,20.72,If_CellVoltage [S1]
+32,multi,List the ports of Swc_SocEstimator.,HLD_BatteryMonitor_v1.0.pdf,4,Rp_CellVolt;Pp_Soc,True,True,True,False,high,17.28,Swc_SocEstimator has 2 port(s): If_CellVoltage (required) and If_SocValue (provided) [S1]
+33,table,Which component produces the signal Sig_SocPercent?,HLD_BatteryMonitor_v1.0.pdf,7,Swc_SocEstimator,True,True,True,True,high,18.41,Swc_SocEstimator [S1]
+34,table,Which component produces the signal Sig_PackTempC?,HLD_BatteryMonitor_v1.0.pdf,7,Swc_TempAcq,True,True,False,True,high,16.71,Swc_TempAcq [S3]
+35,table,What data elements does If_CellVoltage contain?,HLD_BatteryMonitor_v1.0.pdf,6,CellVoltMv;CellIndex,True,True,True,True,high,14.78,If_CellVoltage contains CellVoltMv and CellIndex. [S4]
+36,multi,Which components does Swc_BatMonMgr depend on?,HLD_BatteryMonitor_v1.0.pdf,4,Swc_CellVoltAcq;Swc_TempAcq,True,True,True,True,high,16.36,Swc_BatMonMgr depends on Swc_CellVoltAcq and Swc_TempAcq. [S1]
+37,fact,Which interface does port Rp_StalkPos of Swc_WiperCtrl use?,HLD_WiperControl_v1.0.pdf,4,If_StalkPosition,True,True,True,True,high,21.24,If_StalkPosition [S1]
+38,multi,List the ports of Swc_WiperCtrl.,HLD_WiperControl_v1.0.pdf,4,Rp_StalkPos;Rp_RainLevel;Pp_WiperCmd,True,True,True,True,high,27.93,"The ports of Swc_WiperCtrl are: Rp_StalkPos (required, If_StalkPosition) Rp_RainLevel (required, If_RainLevel) Pp_WiperCmd (provided, If_WiperCmd)  [S1]"
+39,fact,Which interface does port Pp_StalkPos of Swc_StalkRx use?,HLD_WiperControl_v1.0.pdf,4,If_StalkPosition,True,True,True,True,high,20.16,If_StalkPosition [S1]
+40,multi,List the ports of Swc_StalkRx.,HLD_WiperControl_v1.0.pdf,4,Pp_StalkPos,True,True,True,True,high,17.62,Swc_StalkRx has 1 port(s). The port is: Pp_StalkPos provided If_StalkPosition [S1]
+41,fact,Which interface does port Pp_RainLevel of Swc_RainSensorRx use?,HLD_WiperControl_v1.0.pdf,4,If_RainLevel,True,True,True,True,high,21.5,If_RainLevel [S1]
+42,multi,List the ports of Swc_RainSensorRx.,HLD_WiperControl_v1.0.pdf,4,Pp_RainLevel,True,True,True,True,high,22.0,"The port of Swc_RainSensorRx is Pp_RainLevel, which is provided. [S1]"
+43,fact,Which interface does port Rp_WiperCmd of Swc_WiperMotorDrv use?,HLD_WiperControl_v1.0.pdf,4,If_WiperCmd,True,True,True,True,high,20.72,If_WiperCmd [S1]
+44,multi,List the ports of Swc_WiperMotorDrv.,HLD_WiperControl_v1.0.pdf,4,Rp_WiperCmd;Pp_ParkPos,True,True,True,False,high,13.0,"Rp_WiperCmd, If_WiperCmd [S1]"
+45,table,Which component produces the signal Sig_WiperSpeedReq?,HLD_WiperControl_v1.0.pdf,7,Swc_WiperCtrl,True,True,False,True,high,17.34,Swc_WiperCtrl [S2]
+46,table,Which component produces the signal Sig_RainIntensity?,HLD_WiperControl_v1.0.pdf,7,Swc_RainSensorRx,True,True,False,True,high,15.0,Swc_RainSensorRx [S1]
+47,table,What data elements does If_StalkPosition contain?,HLD_WiperControl_v1.0.pdf,6,StalkState;StalkValid,True,True,True,True,high,16.49,"StalkState, StalkValid [S2]"
+48,multi,Which components does Swc_WiperCtrl depend on?,HLD_WiperControl_v1.0.pdf,4,Swc_StalkRx;Swc_RainSensorRx,True,True,True,True,high,14.25,Swc_WiperCtrl depends on Swc_StalkRx and Swc_RainSensorRx. [S1]
+49,not_found,What is the CAN baud rate used by Swc_DoorLockCtrl?,,0,,False,,,True,low,10.06,Not found in the uploaded documents.
+50,not_found,Which ASIL level is assigned to Sig_PinchDetected?,,0,,False,,,True,low,12.73,Not found in the uploaded documents.
+51,not_found,What is the flash memory size of the ECU running Swc_BatMonMgr?,,0,,False,,,True,low,12.68,Not found in the uploaded documents.
+52,not_found,Which supplier developed Swc_WiperCtrl?,,0,,False,,,True,low,12.7,Not found in the uploaded documents.
+53,not_found,What is the worst case execution time of Swc_SocEstimator?,,0,,False,,,True,low,11.38,Not found in the uploaded documents.
+54,not_found,Which AUTOSAR release is used by the Window Lift ECU?,,0,,False,,,True,low,9.86,Not found in the uploaded documents.

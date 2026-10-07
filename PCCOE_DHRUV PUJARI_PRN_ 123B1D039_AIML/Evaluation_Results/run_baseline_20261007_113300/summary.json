@@ -1,0 +1,21 @@
+{
+  "tag": "baseline",
+  "llm": "llama3.1:8b-instruct-q4_K_M",
+  "embedding": "BAAI/bge-small-en-v1.5",
+  "chunk_tokens": 500,
+  "top_k": 5,
+  "min_score": 0.35,
+  "prompt_version": "v1.0",
+  "qa": {
+    "questions": 54,
+    "retrieval_hit_at_k_pct": 100.0,
+    "citation_accuracy_pct": 85.4,
+    "answer_correct_pct": 93.8,
+    "not_found_correct_pct": 100.0,
+    "latency_median_s": 17.66,
+    "latency_max_s": 38.75,
+    "answer_correct_pct_fact": 100.0,
+    "answer_correct_pct_multi": 85.0,
+    "answer_correct_pct_table": 100.0
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "HLD_DoorLock_v1.0.pdf": [
+    {
+      "rule": "undefined_interface",
+      "severity": "high",
+      "entity": "Swc_LockActuatorDrv",
+      "message": "Port Rp_AjarState of Swc_LockActuatorDrv uses interface If_DoorAjar, which is not defined in the document.",
+      "page": null
+    },
+    {
+      "rule": "unknown_dependency",
+      "severity": "high",
+      "entity": "Swc_LockActuatorDrv",
+      "message": "Swc_LockActuatorDrv depends on Swc_LockDiagMgr, but no component with that name is described.",
+      "page": null
+    },
+    {
+      "rule": "orphan_signal",
+      "severity": "medium",
+      "entity": "Sig_LockFaultFlag",
+      "message": "Signal Sig_LockFaultFlag is produced by Swc_LockActuatorDrv but has no consumer.",
+      "page": null
+    }
+  ],
+  "HLD_WindowLift_v1.0.pdf": [
+    {
+      "rule": "undefined_interface",
+      "severity": "high",
+      "entity": "Swc_AntiPinchMon",
+      "message": "Port Rp_MotorCurrent of Swc_AntiPinchMon uses interface If_MotorCurrent, which is not defined in the document.",
+      "page": null
+    },
+    {
+      "rule": "signal_unknown_component",
+      "severity": "medium",
+      "entity": "Sig_MotorDutyCycle",
+      "message": "Signal Sig_MotorDutyCycle refers to Swc_MotorDriverHw, which is not a described component.",
+      "page": null
+    }
+  ],
+  "HLD_BatteryMonitor_v1.0.pdf": [
+    {
+      "rule": "orphan_signal",
+      "severity": "medium",
+      "entity": "Sig_CellMinMv",
+      "message": "Signal Sig_CellMinMv is produced by Swc_CellVoltAcq but has no consumer.",
+      "page": null
+    },
+    {
+      "rule": "signal_without_producer",
+      "severity": "medium",
+      "entity": "Sig_BalancingActive",
+      "message": "Signal Sig_BalancingActive has consumers but no producer.",
+      "page": null
+    },
+    {
+      "rule": "unused_interface",
+      "severity": "low",
+      "entity": "If_BalancingCmd",
+      "message": "Interface If_BalancingCmd is defined but no port uses it.",
+      "page": null
+    }
+  ],
+  "HLD_WiperControl_v1.0.pdf": [
+    {
+      "rule": "unknown_dependency",
+      "severity": "high",
+      "entity": "Swc_WiperMotorDrv",
+      "message": "Swc_WiperMotorDrv depends on Swc_WiperDiag, but no component with that name is described.",
+      "page": null
+    }
+  ],
+  "HLD_DoorLock_v1.1.pdf": []
+}

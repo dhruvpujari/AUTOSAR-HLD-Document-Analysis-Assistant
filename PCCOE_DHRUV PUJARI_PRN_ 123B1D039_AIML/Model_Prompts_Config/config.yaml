@@ -1,0 +1,27 @@
+# All tunable parameters live here so every evaluation run can be reproduced.
+llm:
+  host: http://localhost:11434      # Ollama running locally
+  model: llama3.1:8b-instruct-q4_K_M
+  temperature: 0.1
+  num_ctx: 8192
+  timeout_s: 300
+
+embedding:
+  model: BAAI/bge-small-en-v1.5     # try BAAI/bge-base-en-v1.5 for comparison
+  query_prefix: "Represent this sentence for searching relevant passages: "
+
+chunking:
+  max_tokens: 500                   # converted to words (x0.75) in ingest.py
+  overlap_tokens: 80
+
+retrieval:
+  top_k: 5
+  min_score: 0.35                   # below this the question is answered "not found"
+  high_score: 0.60                  # top score needed for "high" confidence
+
+paths:
+  upload_dir: ./store/uploads
+  chroma_dir: ./store/chroma
+  sqlite: ./store/app.db
+  input_data: ../Input_Data
+  results_dir: ../Evaluation_Results

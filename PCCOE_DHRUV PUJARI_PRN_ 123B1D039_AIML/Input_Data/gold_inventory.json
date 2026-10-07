@@ -1,0 +1,613 @@
+{
+  "HLD_DoorLock_v1.0.pdf": {
+    "components": {
+      "Swc_DoorLockCtrl": {
+        "ports": [
+          {
+            "name": "Rp_KeyFobReq",
+            "direction": "required",
+            "interface": "If_KeyFobRequest"
+          },
+          {
+            "name": "Rp_VehSpeed",
+            "direction": "required",
+            "interface": "If_VehSpeed"
+          },
+          {
+            "name": "Pp_LockCmd",
+            "direction": "provided",
+            "interface": "If_DoorLockCmd"
+          }
+        ],
+        "depends_on": [
+          "Swc_VehSpeedProv",
+          "Swc_KeyFobRx"
+        ]
+      },
+      "Swc_KeyFobRx": {
+        "ports": [
+          {
+            "name": "Pp_KeyFobReq",
+            "direction": "provided",
+            "interface": "If_KeyFobRequest"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_VehSpeedProv": {
+        "ports": [
+          {
+            "name": "Pp_VehSpeed",
+            "direction": "provided",
+            "interface": "If_VehSpeed"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_LockActuatorDrv": {
+        "ports": [
+          {
+            "name": "Rp_LockCmd",
+            "direction": "required",
+            "interface": "If_DoorLockCmd"
+          },
+          {
+            "name": "Pp_ActuatorStatus",
+            "direction": "provided",
+            "interface": "If_ActuatorStatus"
+          },
+          {
+            "name": "Rp_AjarState",
+            "direction": "required",
+            "interface": "If_DoorAjar"
+          }
+        ],
+        "depends_on": [
+          "Swc_LockDiagMgr"
+        ]
+      }
+    },
+    "interfaces": {
+      "If_KeyFobRequest": {
+        "elements": [
+          "LockRequest",
+          "UnlockRequest",
+          "PanicRequest"
+        ]
+      },
+      "If_VehSpeed": {
+        "elements": [
+          "VehSpeedKph",
+          "VehSpeedValid"
+        ]
+      },
+      "If_DoorLockCmd": {
+        "elements": [
+          "LockTarget",
+          "UnlockTarget",
+          "Timeout"
+        ]
+      },
+      "If_ActuatorStatus": {
+        "elements": [
+          "MotorState",
+          "EndStopReached"
+        ]
+      }
+    },
+    "signals": {
+      "Sig_DoorLockState": {
+        "producer": "Swc_LockActuatorDrv",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_KeyFobValid": {
+        "producer": "Swc_KeyFobRx",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_VehSpeedKph": {
+        "producer": "Swc_VehSpeedProv",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_LockFaultFlag": {
+        "producer": "Swc_LockActuatorDrv",
+        "consumers": []
+      }
+    }
+  },
+  "HLD_WindowLift_v1.0.pdf": {
+    "components": {
+      "Swc_WindowLiftCtrl": {
+        "ports": [
+          {
+            "name": "Rp_SwitchInput",
+            "direction": "required",
+            "interface": "If_WindowSwitch"
+          },
+          {
+            "name": "Rp_Position",
+            "direction": "required",
+            "interface": "If_WindowPosition"
+          },
+          {
+            "name": "Pp_MotorCmd",
+            "direction": "provided",
+            "interface": "If_MotorCmd"
+          }
+        ],
+        "depends_on": [
+          "Swc_SwitchRx",
+          "Swc_PositionSensor"
+        ]
+      },
+      "Swc_SwitchRx": {
+        "ports": [
+          {
+            "name": "Pp_Switch",
+            "direction": "provided",
+            "interface": "If_WindowSwitch"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_PositionSensor": {
+        "ports": [
+          {
+            "name": "Pp_Position",
+            "direction": "provided",
+            "interface": "If_WindowPosition"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_AntiPinchMon": {
+        "ports": [
+          {
+            "name": "Rp_MotorCurrent",
+            "direction": "required",
+            "interface": "If_MotorCurrent"
+          },
+          {
+            "name": "Pp_PinchEvent",
+            "direction": "provided",
+            "interface": "If_PinchEvent"
+          }
+        ],
+        "depends_on": [
+          "Swc_WindowLiftCtrl"
+        ]
+      }
+    },
+    "interfaces": {
+      "If_WindowSwitch": {
+        "elements": [
+          "SwitchState",
+          "PressDuration"
+        ]
+      },
+      "If_WindowPosition": {
+        "elements": [
+          "PositionPct",
+          "PositionValid"
+        ]
+      },
+      "If_MotorCmd": {
+        "elements": [
+          "Direction",
+          "DutyCycle"
+        ]
+      },
+      "If_PinchEvent": {
+        "elements": [
+          "PinchDetected",
+          "PinchPosition"
+        ]
+      }
+    },
+    "signals": {
+      "Sig_WindowPosPct": {
+        "producer": "Swc_PositionSensor",
+        "consumers": [
+          "Swc_WindowLiftCtrl",
+          "Swc_AntiPinchMon"
+        ]
+      },
+      "Sig_PinchDetected": {
+        "producer": "Swc_AntiPinchMon",
+        "consumers": [
+          "Swc_WindowLiftCtrl"
+        ]
+      },
+      "Sig_WindowSwitchCmd": {
+        "producer": "Swc_SwitchRx",
+        "consumers": [
+          "Swc_WindowLiftCtrl"
+        ]
+      },
+      "Sig_MotorDutyCycle": {
+        "producer": "Swc_WindowLiftCtrl",
+        "consumers": [
+          "Swc_MotorDriverHw"
+        ]
+      }
+    }
+  },
+  "HLD_BatteryMonitor_v1.0.pdf": {
+    "components": {
+      "Swc_BatMonMgr": {
+        "ports": [
+          {
+            "name": "Rp_CellVolt",
+            "direction": "required",
+            "interface": "If_CellVoltage"
+          },
+          {
+            "name": "Rp_PackTemp",
+            "direction": "required",
+            "interface": "If_PackTemp"
+          },
+          {
+            "name": "Pp_SocValue",
+            "direction": "provided",
+            "interface": "If_SocValue"
+          }
+        ],
+        "depends_on": [
+          "Swc_CellVoltAcq",
+          "Swc_TempAcq"
+        ]
+      },
+      "Swc_CellVoltAcq": {
+        "ports": [
+          {
+            "name": "Pp_CellVolt",
+            "direction": "provided",
+            "interface": "If_CellVoltage"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_TempAcq": {
+        "ports": [
+          {
+            "name": "Pp_PackTemp",
+            "direction": "provided",
+            "interface": "If_PackTemp"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_SocEstimator": {
+        "ports": [
+          {
+            "name": "Rp_CellVolt",
+            "direction": "required",
+            "interface": "If_CellVoltage"
+          },
+          {
+            "name": "Pp_Soc",
+            "direction": "provided",
+            "interface": "If_SocValue"
+          }
+        ],
+        "depends_on": [
+          "Swc_BatMonMgr"
+        ]
+      }
+    },
+    "interfaces": {
+      "If_CellVoltage": {
+        "elements": [
+          "CellVoltMv",
+          "CellIndex"
+        ]
+      },
+      "If_PackTemp": {
+        "elements": [
+          "TempDegC",
+          "SensorId"
+        ]
+      },
+      "If_SocValue": {
+        "elements": [
+          "SocPercent",
+          "SocValid"
+        ]
+      },
+      "If_BalancingCmd": {
+        "elements": [
+          "BalanceMask",
+          "BalanceTime"
+        ]
+      }
+    },
+    "signals": {
+      "Sig_SocPercent": {
+        "producer": "Swc_SocEstimator",
+        "consumers": [
+          "Swc_BatMonMgr"
+        ]
+      },
+      "Sig_PackTempC": {
+        "producer": "Swc_TempAcq",
+        "consumers": [
+          "Swc_BatMonMgr",
+          "Swc_SocEstimator"
+        ]
+      },
+      "Sig_CellMinMv": {
+        "producer": "Swc_CellVoltAcq",
+        "consumers": []
+      },
+      "Sig_BalancingActive": {
+        "producer": "",
+        "consumers": [
+          "Swc_BatMonMgr"
+        ]
+      }
+    }
+  },
+  "HLD_WiperControl_v1.0.pdf": {
+    "components": {
+      "Swc_WiperCtrl": {
+        "ports": [
+          {
+            "name": "Rp_StalkPos",
+            "direction": "required",
+            "interface": "If_StalkPosition"
+          },
+          {
+            "name": "Rp_RainLevel",
+            "direction": "required",
+            "interface": "If_RainLevel"
+          },
+          {
+            "name": "Pp_WiperCmd",
+            "direction": "provided",
+            "interface": "If_WiperCmd"
+          }
+        ],
+        "depends_on": [
+          "Swc_StalkRx",
+          "Swc_RainSensorRx"
+        ]
+      },
+      "Swc_StalkRx": {
+        "ports": [
+          {
+            "name": "Pp_StalkPos",
+            "direction": "provided",
+            "interface": "If_StalkPosition"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_RainSensorRx": {
+        "ports": [
+          {
+            "name": "Pp_RainLevel",
+            "direction": "provided",
+            "interface": "If_RainLevel"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_WiperMotorDrv": {
+        "ports": [
+          {
+            "name": "Rp_WiperCmd",
+            "direction": "required",
+            "interface": "If_WiperCmd"
+          },
+          {
+            "name": "Pp_ParkPos",
+            "direction": "provided",
+            "interface": "If_ParkPosition"
+          }
+        ],
+        "depends_on": [
+          "Swc_WiperCtrl",
+          "Swc_WiperDiag"
+        ]
+      }
+    },
+    "interfaces": {
+      "If_StalkPosition": {
+        "elements": [
+          "StalkState",
+          "StalkValid"
+        ]
+      },
+      "If_RainLevel": {
+        "elements": [
+          "RainIntensity",
+          "RainValid"
+        ]
+      },
+      "If_WiperCmd": {
+        "elements": [
+          "SpeedRequest",
+          "ParkRequest"
+        ]
+      },
+      "If_ParkPosition": {
+        "elements": [
+          "ParkReached"
+        ]
+      }
+    },
+    "signals": {
+      "Sig_WiperSpeedReq": {
+        "producer": "Swc_WiperCtrl",
+        "consumers": [
+          "Swc_WiperMotorDrv"
+        ]
+      },
+      "Sig_RainIntensity": {
+        "producer": "Swc_RainSensorRx",
+        "consumers": [
+          "Swc_WiperCtrl"
+        ]
+      },
+      "Sig_WiperParked": {
+        "producer": "Swc_WiperMotorDrv",
+        "consumers": [
+          "Swc_WiperCtrl"
+        ]
+      },
+      "Sig_StalkPos": {
+        "producer": "Swc_StalkRx",
+        "consumers": [
+          "Swc_WiperCtrl"
+        ]
+      }
+    }
+  },
+  "HLD_DoorLock_v1.1.pdf": {
+    "components": {
+      "Swc_DoorLockCtrl": {
+        "ports": [
+          {
+            "name": "Rp_KeyFobReq",
+            "direction": "required",
+            "interface": "If_KeyFobRequest"
+          },
+          {
+            "name": "Rp_VehSpeed",
+            "direction": "required",
+            "interface": "If_VehSpeed"
+          },
+          {
+            "name": "Pp_LockCmd",
+            "direction": "provided",
+            "interface": "If_DoorLockCmdV2"
+          }
+        ],
+        "depends_on": [
+          "Swc_VehSpeedProv",
+          "Swc_KeyFobRx"
+        ]
+      },
+      "Swc_KeyFobRx": {
+        "ports": [
+          {
+            "name": "Pp_KeyFobReq",
+            "direction": "provided",
+            "interface": "If_KeyFobRequest"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_VehSpeedProv": {
+        "ports": [
+          {
+            "name": "Pp_VehSpeed",
+            "direction": "provided",
+            "interface": "If_VehSpeed"
+          }
+        ],
+        "depends_on": []
+      },
+      "Swc_LockActuatorDrv": {
+        "ports": [
+          {
+            "name": "Rp_LockCmd",
+            "direction": "required",
+            "interface": "If_DoorLockCmdV2"
+          },
+          {
+            "name": "Pp_ActuatorStatus",
+            "direction": "provided",
+            "interface": "If_ActuatorStatus"
+          },
+          {
+            "name": "Rp_AjarState",
+            "direction": "required",
+            "interface": "If_DoorAjar"
+          }
+        ],
+        "depends_on": [
+          "Swc_DoorAjarMon"
+        ]
+      },
+      "Swc_DoorAjarMon": {
+        "ports": [
+          {
+            "name": "Pp_AjarState",
+            "direction": "provided",
+            "interface": "If_DoorAjar"
+          }
+        ],
+        "depends_on": []
+      }
+    },
+    "interfaces": {
+      "If_KeyFobRequest": {
+        "elements": [
+          "LockRequest",
+          "UnlockRequest",
+          "PanicRequest"
+        ]
+      },
+      "If_VehSpeed": {
+        "elements": [
+          "VehSpeedKph",
+          "VehSpeedValid"
+        ]
+      },
+      "If_ActuatorStatus": {
+        "elements": [
+          "MotorState",
+          "EndStopReached"
+        ]
+      },
+      "If_DoorAjar": {
+        "elements": [
+          "DoorFL",
+          "DoorFR",
+          "DoorRL",
+          "DoorRR"
+        ]
+      },
+      "If_DoorLockCmdV2": {
+        "elements": [
+          "LockTarget",
+          "UnlockTarget",
+          "Timeout",
+          "RetryCount"
+        ]
+      }
+    },
+    "signals": {
+      "Sig_DoorLockState": {
+        "producer": "Swc_LockActuatorDrv",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_KeyFobValid": {
+        "producer": "Swc_KeyFobRx",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_VehSpeedKph": {
+        "producer": "Swc_VehSpeedProv",
+        "consumers": [
+          "Swc_DoorLockCtrl"
+        ]
+      },
+      "Sig_DoorAjar": {
+        "producer": "Swc_DoorAjarMon",
+        "consumers": [
+          "Swc_LockActuatorDrv"
+        ]
+      }
+    }
+  }
+}
