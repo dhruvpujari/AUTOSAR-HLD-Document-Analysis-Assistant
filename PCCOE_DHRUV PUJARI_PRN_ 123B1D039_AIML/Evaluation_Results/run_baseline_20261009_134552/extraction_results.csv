@@ -1,0 +1,6 @@
+doc,llm_llm_errors,llm_dropped_ungrounded,llm_regex_added,components_precision,components_recall,components_f1,interfaces_precision,interfaces_recall,interfaces_f1,signals_precision,signals_recall,signals_f1,port_links_precision,port_links_recall,port_links_f1,defect_recall,defect_false_alarms
+HLD_DoorLock_v1.0.pdf,0,2,3,0.333,1.0,0.5,0.667,1.0,0.8,0.667,1.0,0.8,0.278,0.625,0.385,0.333,5
+HLD_WindowLift_v1.0.pdf,0,3,2,0.444,1.0,0.615,0.667,1.0,0.8,0.667,1.0,0.8,0.375,0.857,0.522,0.0,3
+HLD_BatteryMonitor_v1.0.pdf,0,0,2,0.444,1.0,0.615,0.8,1.0,0.889,0.8,1.0,0.889,0.312,0.714,0.435,0.667,3
+HLD_WiperControl_v1.0.pdf,0,2,3,0.444,1.0,0.615,0.444,1.0,0.615,0.8,1.0,0.889,0.368,1.0,0.538,0.0,2
+HLD_DoorLock_v1.1.pdf,0,8,3,0.417,1.0,0.588,0.833,1.0,0.909,0.667,1.0,0.8,0.4,0.889,0.552,,3
